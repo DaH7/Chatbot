@@ -8,7 +8,7 @@ def chat_with_bot(message, history):
 
     # Convert history to messages format
     messages = [
-        {"role": "system", "content": "Speak in spanish"}
+        {"role": "system", "content": "Speak in English"}
     ]
 
     # Add history messages
@@ -36,10 +36,13 @@ def chat_with_bot(message, history):
             yield response
 
 
+
+
+
 # Create UI with Chatbot
-with gr.Blocks() as demo:
-    chatbot = gr.Chatbot()
-    msg = gr.Textbox(placeholder="Enter your message here...")
+with gr.Blocks(fill_height=True) as demo:
+    chatbot = gr.Chatbot(scale=1)
+    msg = gr.Textbox(scale=0,placeholder="Enter your message here...")
     clear = gr.Button("Clear")
 
 
